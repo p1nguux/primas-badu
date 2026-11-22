@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badulaque Groove · Primas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#070b1f;--card:#0d1432;--card2:#0a1030;--line:#2a3a80;--tx:#fff;--mut:#9db6ff;
+  --red:#e11d2e;--blue:#1e6bff;--blue2:#2f7bff;
+  --mk:"Permanent Marker","Rock Salt",Impact,"Arial Black",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;
+  background:
+   radial-gradient(circle at 6% 10%,rgba(225,29,46,.55) 0 46px,transparent 48px),
+   radial-gradient(circle at 94% 22%,rgba(30,107,255,.55) 0 58px,transparent 60px),
+   radial-gradient(circle at 88% 78%,rgba(225,29,46,.4) 0 40px,transparent 42px),
+   radial-gradient(circle at 10% 88%,rgba(30,107,255,.45) 0 52px,transparent 54px),
+   radial-gradient(900px 500px at 85% -10%,rgba(225,29,46,.28),transparent),
+   radial-gradient(900px 500px at 0% 0%,rgba(30,107,255,.3),transparent),
+   radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.5px) 0 0/16px 16px,
+   var(--bg);background-attachment:fixed}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 56px}
+.hero{position:relative;text-align:center;padding:10px 0 4px}
+.ltd{position:absolute;right:0;top:0;border:2px solid #fff;border-radius:8px;padding:2px 9px;background:#12307e;text-shadow:0 0 8px #5aa0ff;transform:rotate(4deg);line-height:1.1}
+.ltd b{display:block;font-family:var(--mk);font-size:1.1rem;color:#cfe1ff}
+.ltd small{display:block;color:#ff5a68;font-weight:800;font-size:.7rem;letter-spacing:1px;text-shadow:0 0 8px #e11d2e}
+.kicker{font-family:var(--mk);color:#fff;letter-spacing:2px;font-size:.95rem;margin:0 0 -4px;text-shadow:2px 2px 0 var(--red)}
+h1{margin:0;font-family:var(--mk);font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(2.3rem,10vw,3.8rem);color:#fff;transform:rotate(-2deg);
+  text-shadow:2px 2px 0 var(--red),-2px -2px 0 var(--red),2px -2px 0 var(--red),-2px 2px 0 var(--red),5px 6px 0 #000}
+h1 em{display:block;font-style:italic;color:var(--blue2);margin-top:2px;
+  text-shadow:2px 2px 0 #fff,-2px -2px 0 #fff,2px -2px 0 #fff,-2px 2px 0 #fff,0 0 0 var(--red),5px 6px 0 var(--red)}
+.tag{display:inline-block;margin-top:14px;background:var(--red);color:#fff;font-family:var(--mk);padding:4px 14px;border:2px solid #fff;border-radius:6px;transform:rotate(1.5deg);letter-spacing:1px;text-transform:uppercase;box-shadow:3px 3px 0 #000}
+.drip{height:26px;margin:2px -16px 14px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='26' viewBox='0 0 120 26'><path d='M0 0H120V8H112V20a4 4 0 0 1-8 0V8H70V14a3 3 0 0 1-6 0V8H40V24a4 4 0 0 1-8 0V8H14V16a3 3 0 0 1-6 0V8H0Z' fill='%23e11d2e'/></svg>") repeat-x top left/120px 26px}
+.sub{color:#dfe8ff;margin:0 0 18px;font-size:.95rem;text-align:center}
+.card{background:var(--card);border:2px solid #fff;border-radius:14px;padding:18px 16px 16px;margin-bottom:22px;box-shadow:6px 6px 0 var(--red)}
+#emps .card:nth-child(even){box-shadow:6px 6px 0 var(--blue)}
+.card h2{display:inline-block;font-family:var(--mk);font-weight:400;font-size:1rem;text-transform:uppercase;letter-spacing:1px;color:#fff;background:var(--blue);border:2px solid #fff;padding:2px 12px;margin:-30px 0 14px -4px;transform:rotate(-2deg);box-shadow:2px 2px 0 #000}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full{grid-column:1/-1}
+label{display:block;font-size:.74rem;color:var(--mut);margin:0 0 5px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+input,select{width:100%;padding:11px 12px;border-radius:8px;border:2px solid var(--line);background:var(--card2);color:#fff;font-size:1rem;font-family:inherit}
+input:focus,select:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px var(--blue)}
+input[readonly]{color:#fff;font-weight:800;background:rgba(30,107,255,.22);border:2px dashed var(--blue2)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:6px;font-family:var(--mk);font-size:.9rem;border:2px solid currentColor;background:rgba(0,0,0,.3);transform:rotate(-1.5deg)}
+.ehead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.stat{background:var(--card2);border:2px solid var(--blue2);border-radius:10px;padding:10px 6px;text-align:center}
+.stat small{display:block;color:var(--mut);font-size:.66rem;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.stat b{font-family:var(--mk);font-weight:400;font-size:1.2rem;color:#fff}
+.note{color:#ffb3ba;font-size:.84rem;margin-top:8px;min-height:1em}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+button{cursor:pointer;border:2px solid #fff;border-radius:8px;padding:11px 16px;font-family:var(--mk);text-transform:uppercase;letter-spacing:.8px;font-size:.95rem;color:#fff;background:var(--red);box-shadow:3px 3px 0 #000}
+button.alt{background:var(--blue)}
+button.ghost{background:transparent;box-shadow:none;border-color:#6b7bc0;color:#cfd8ff}
+button.sm{padding:5px 10px;font-size:.78rem}
+button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+.empty{color:var(--mut);text-align:center;padding:18px;font-size:.9rem}
+
+#photo{position:fixed;inset:0;z-index:50;background:rgba(4,6,18,.95);overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 14px calc(16px + env(safe-area-inset-bottom,0px));display:none}
+#photo.on{display:block}
+.pin{max-width:680px;margin:0 auto}
+.pin .hint{color:#9db6ff;font-size:.82rem;margin:14px 0}
+#shot img{width:100%;border-radius:14px;display:block}
+.sheet{background:#070b1f;color:#fff;border:3px solid #fff;border-radius:14px;padding:20px;width:100%;box-shadow:6px 6px 0 #e11d2e}
+.sh-t{font-family:var(--mk);font-size:1.9rem;line-height:1;text-transform:uppercase;color:#fff;text-shadow:2px 2px 0 #e11d2e}
+.sh-t span{color:#2f7bff;font-style:italic;text-shadow:2px 2px 0 #fff}
+.sh-s{display:inline-block;margin:10px 0 6px;background:#e11d2e;border:2px solid #fff;border-radius:6px;padding:2px 12px;font-family:var(--mk);letter-spacing:1px}
+.sh-w{margin-top:6px;font-weight:800}
+.sh-p{color:#9db6ff;font-size:.88rem;margin:2px 0 14px}
+.sheet table{width:100%;border-collapse:collapse;font-size:.9rem}
+.sheet th,.sheet td{padding:8px 5px;text-align:left;border-bottom:1px solid #24336f;vertical-align:top}
+.sheet th{color:#9db6ff;font-size:.7rem;text-transform:uppercase;letter-spacing:1px}
+.sheet .r{text-align:right}
+.sh-f{margin-top:16px;padding:12px;background:#e11d2e;border:2px solid #fff;border-radius:10px;text-align:center;font-family:var(--mk);font-size:1.5rem;box-shadow:3px 3px 0 #1e6bff}
+.sh-f small{display:block;font-family:system-ui,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ffd5d9}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.sheet{padding:14px}.sheet table{font-size:.8rem}.ltd{position:static;display:inline-block;margin-bottom:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="ltd"><b>LTD</b><small>24/7</small></div>
+    <div class="kicker">★ Bienvenido a ★</div>
+    <h1>Badulaque <em>Groove</em></h1>
+    <div class="tag">Generador de primas</div>
+  </header>
+  <div class="drip"></div>
+  <p class="sub">La prima de la semana se reparte entre todos los empleados, excepto Dirección.</p>
+
+  <div class="card">
+    <h2>Semana</h2>
+    <div class="grid">
+      <div><label for="ini">Del</label><input type="date" id="ini"></div>
+      <div><label for="fin">Al</label><input type="date" id="fin"></div>
+      <div class="full"><label for="prima">Prima de esta semana</label><select id="prima"></select></div>
+      <div class="full"><label for="modo">Reparto del 100 %</label>
+        <select id="modo"><option value="horas">Proporcional a las horas trabajadas</option><option value="igual">A partes iguales</option></select></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><small>Prima a repartir</small><b id="sPool">0 $</b></div>
+      <div class="stat"><small>Participantes</small><b id="sN">0</b></div>
+      <div class="stat"><small>Horas totales</small><b id="sH">0</b></div>
+    </div>
+    <div class="note" id="nota"></div>
+  </div>
+
+  <div id="emps"></div>
+  <div class="empty" id="vacio" style="display:none">Aún no hay empleados. Pulsa «Añadir empleado».</div>
+
+  <div class="btns">
+    <button id="add">＋ Añadir empleado</button>
+    <button id="foto" class="alt">📸 Hacer foto</button>
+    <button id="copy" class="ghost">Copiar para Discord</button>
+  </div>
+  <div class="note" id="msg"></div>
+</div>
+
+<div id="photo">
+  <div class="pin">
+    <div id="shot"><div class="sheet" id="sheet"></div></div>
+    <div class="hint" id="hint">Haz una captura de pantalla de la tabla, o pulsa «Generar imagen» y mantén pulsada la imagen para guardarla o compartirla.</div>
+    <div class="btns">
+      <button id="gen">🖼️ Generar imagen</button>
+      <button id="cimg" class="alt">Copiar imagen</button>
+      <button id="cerrar" class="ghost">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+const CATS = {
+  'Dirección':{c:'#ffd84d',i:'👑',r:[['Gerente','—'],['Subgerente','—']]},
+  'Mando':{c:'#ff5a68',i:'🛒',r:[['Encargado Adjunto','N1'],['Encargado de Sección','N2'],['Responsable de Departamento','N3']]},
+  'Experimentado':{c:'#8fb8ff',i:'💎',r:[['Dependiente Senior','N1'],['Especialista de Tienda','N2'],['Referente de Sección','N3']]},
+  'Empleado':{c:'#4d8dff',i:'👥',r:[['Dependiente Junior','N1'],['Dependiente','N2'],['Dependiente Plus','N3']]},
+  'Formación':{c:'#ff9aa4',i:'🎓',r:[['Aprendiz','N1'],['Auxiliar en Formación','N2']]}
+};
+const TIERS=[30,60,90,120,150];
+const $=id=>document.getElementById(id);
+const money=n=>Math.round(n).toLocaleString('de-DE')+' $';
+const fmtD=s=>{if(!s)return '—';const[a,b,c]=s.split('-');return c+'/'+b+'/'+a};
+const fmtPct=p=>(Math.round(p*100)/100).toString().replace('.',',')+' %';
+const fmtH=h=>(Math.round(h*10)/10).toString().replace('.',',');
+function el(tag,props,parent){const n=document.createElement(tag);Object.assign(n,props||{});if(parent)parent.appendChild(n);return n}
+function field(parent,label,node,full){const d=el('div',{className:full?'full':''},parent);el('label',{textContent:label},d);d.appendChild(node);return d}
+function addDays(s,n){const d=new Date(s+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
+function say(t){$('msg').textContent=t;setTimeout(()=>{if($('msg').textContent===t)$('msg').textContent=''},3500)}
+
+TIERS.forEach(h=>el('option',{value:h,textContent:h+' horas — '+money(h*1000)},$('prima')));
+
+const emps=[];let seq=0;
+
+function newEmp(){
+  const e={id:++seq,name:'',cat:'Empleado',ri:0,h:0};
+  emps.push(e);
+  const card=el('div',{className:'card'},$('emps'));
+  const head=el('div',{className:'ehead'},card);
+  const badge=el('span',{className:'badge'},head);
+  const del=el('button',{className:'ghost sm',textContent:'✕ Quitar'},head);
+  const grid=el('div',{className:'grid'},card);
+  const name=el('input',{type:'text',placeholder:'Nombre del empleado',autocomplete:'off'});
+  field(grid,'Empleado',name,true);
+  const cat=el('select');Object.keys(CATS).forEach(k=>el('option',{textContent:k},cat));cat.value=e.cat;
+  field(grid,'Categoría',cat,true);
+  const rg=el('select'),nv=el('select');
+  field(grid,'Rango',rg);field(grid,'Nivel',nv);
+  const hr=el('input',{type:'number',min:0,step:0.5,inputMode:'decimal',placeholder:'0'});
+  field(grid,'Horas',hr,true);
+  const pct=el('input',{readOnly:true,value:'0 %'}),tot=el('input',{readOnly:true,value:'0 $'});
+  field(grid,'Porcentaje de primas',pct);field(grid,'Total de primas',tot);
+  e.pct=pct;e.tot=tot;e.card=card;
+
+  function fill(){
+    const d=CATS[e.cat];rg.innerHTML='';nv.innerHTML='';
+    d.r.forEach(([a,b])=>{el('option',{textContent:a},rg);el('option',{textContent:b},nv)});
+    e.ri=Math.min(e.ri,d.r.length-1);rg.selectedIndex=e.ri;nv.selectedIndex=e.ri;
+    badge.textContent=d.i+' '+e.cat;badge.style.color=d.c;
+  }
+  name.oninput=()=>{e.name=name.value.trim()};
+  cat.onchange=()=>{e.cat=cat.value;e.ri=0;fill();recalc()};
+  rg.onchange=()=>{e.ri=rg.selectedIndex;nv.selectedIndex=e.ri};
+  nv.onchange=()=>{e.ri=nv.selectedIndex;rg.selectedIndex=e.ri};
+  hr.oninput=()=>{e.h=Math.max(0,parseFloat(hr.value)||0);recalc()};
+  del.onclick=()=>{emps.splice(emps.indexOf(e),1);card.remove();recalc()};
+  fill();recalc();
+  return e;
+}
+
+function shares(){
+  const pool=+$('prima').value*1000;
+  const part=emps.filter(e=>e.cat!=='Dirección');
+  const base=part.map(e=>$('modo').value==='horas'?e.h:1);
+  const sum=base.reduce((a,b)=>a+b,0);
+  const res=new Map();
+  if(sum>0){
+    const raw=base.map(b=>b/sum*pool),fl=raw.map(Math.floor);
+    let rem=pool-fl.reduce((a,b)=>a+b,0);
+    raw.map((r,i)=>[r-fl[i],i]).sort((a,b)=>b[0]-a[0]).forEach(([f,i])=>{if(rem>0){fl[i]++;rem--}});
+    part.forEach((e,i)=>res.set(e,{pct:base[i]/sum*100,total:fl[i]}));
+  }else part.forEach(e=>res.set(e,{pct:0,total:0}));
+  return {pool,part,sum,res,hours:part.reduce((a,e)=>a+e.h,0)};
+}
+
+function recalc(){
+  const s=shares();
+  emps.forEach(e=>{
+    const x=s.res.get(e);
+    if(!x){e.pct.value='No participa';e.tot.value='0 $'}
+    else{e.pct.value=fmtPct(x.pct);e.tot.value=money(x.total)}
+  });
+  $('sPool').textContent=money(s.pool);$('sN').textContent=s.part.length;$('sH').textContent=fmtH(s.hours);
+  $('vacio').style.display=emps.length?'none':'block';
+  $('nota').textContent=!s.part.length?'Añade al menos un empleado que no sea de Dirección.':(s.sum===0?'Introduce las horas de los empleados para calcular el reparto.':'');
+}
+
+function ranking(e){const r=CATS[e.cat].r[e.ri];return r[0]+(r[1]!=='—'?' · '+r[1]:'')}
+
+function buildSheet(){
+  const s=shares(),sh=$('sheet');sh.innerHTML='';
+  el('div',{className:'sh-t',innerHTML:'Badulaque <span>Groove</span>'},sh);el('div',{className:'sh-s',textContent:'PRIMAS SEMANALES'},sh);
+  el('div',{className:'sh-w',textContent:'Semana del '+fmtD($('ini').value)+' al '+fmtD($('fin').value)},sh);
+  el('div',{className:'sh-p',textContent:'Prima: '+money(s.pool)+' · '+($('modo').value==='horas'?'reparto según horas':'reparto a partes iguales')},sh);
+  const t=el('table',{},sh),hd=el('tr',{},el('thead',{},t));
+  ['Empleado','Rango','Horas','%','Total'].forEach((x,i)=>el('th',{textContent:x,className:i>1?'r':''},hd));
+  const tb=el('tbody',{},t);let sum=0;
+  emps.forEach(e=>{
+    const tr=el('tr',{},tb),x=s.res.get(e);
+    el('td',{textContent:e.name||'—'},tr);
+    const td=el('td',{textContent:ranking(e)},tr);td.style.color=CATS[e.cat].c;
+    el('td',{textContent:fmtH(e.h),className:'r'},tr);
+    el('td',{textContent:x?fmtPct(x.pct):'—',className:'r'},tr);
+    el('td',{textContent:x?money(x.total):'No participa',className:'r'},tr);
+    if(x)sum+=x.total;
+  });
+  const f=el('div',{className:'sh-f'},sh);
+  el('small',{textContent:'Total repartido'},f);f.appendChild(document.createTextNode(money(sum)));
+}
+
+let canvas=null;
+function showSheet(){canvas=null;$('shot').innerHTML='<div class="sheet" id="sheet"></div>';buildSheet()}
+async function getCanvas(){
+  if(canvas)return canvas;
+  if(!window.html2canvas)throw new Error('nolib');
+  canvas=await html2canvas($('sheet'),{backgroundColor:'#070b1f',scale:2});
+  return canvas;
+}
+$('foto').onclick=()=>{
+  if(!emps.length){say('Añade al menos un empleado.');return}
+  showSheet();$('photo').classList.add('on');
+};
+$('cerrar').onclick=()=>$('photo').classList.remove('on');
+document.addEventListener('keydown',ev=>{if(ev.key==='Escape')$('photo').classList.remove('on')});
+$('gen').onclick=async()=>{
+  try{
+    const c=await getCanvas();
+    $('shot').innerHTML='';el('img',{src:c.toDataURL('image/png'),alt:'Primas de la semana'},$('shot'));
+    $('hint').textContent='Mantén pulsada la imagen (o clic derecho en el ordenador) para guardarla o compartirla.';
+  }catch(err){$('hint').textContent='No se pudo generar la imagen. Haz una captura de pantalla de la tabla.'}
+};
+$('cimg').onclick=async()=>{
+  try{
+    const c=await getCanvas();
+    const blob=await new Promise(r=>c.toBlob(r,'image/png'));
+    await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);
+    $('hint').textContent='Imagen copiada ✔ Ya puedes pegarla en Discord.';
+  }catch(err){$('hint').textContent='No se pudo copiar. Pulsa «Generar imagen» y guárdala, o haz una captura de pantalla.'}
+};
+
+function copyText(t){
+  const fb=()=>{const a=el('textarea',{value:t},document.body);a.select();try{document.execCommand('copy');say('Copiado ✔')}catch(e){say('No se pudo copiar')}a.remove()};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(()=>say('Copiado ✔'),fb);else fb();
+}
+$('copy').onclick=()=>{
+  if(!emps.length){say('Añade al menos un empleado.');return}
+  const s=shares();let sum=0;
+  const lines=emps.map(e=>{
+    const x=s.res.get(e),n=e.name||'—';
+    if(!x)return '• '+n+' ('+ranking(e)+') — Dirección: no participa';
+    sum+=x.total;
+    return '• '+n+' ('+ranking(e)+') — '+fmtH(e.h)+' h — '+fmtPct(x.pct)+' — '+money(x.total);
+  });
+  copyText('🛒 BADULAQUE GROOVE · PRIMAS · '+fmtD($('ini').value)+' al '+fmtD($('fin').value)+'\nPrima: '+money(s.pool)+' ('+($('modo').value==='horas'?'según horas':'a partes iguales')+')\n\n'+lines.join('\n')+'\n\n✅ Total repartido: '+money(sum));
+};
+
+$('add').onclick=newEmp;
+$('prima').onchange=recalc;$('modo').onchange=recalc;
+$('ini').onchange=()=>{if($('ini').value)$('fin').value=addDays($('ini').value,6)};
+newEmp();
+</script>
+</body>
+</html>
